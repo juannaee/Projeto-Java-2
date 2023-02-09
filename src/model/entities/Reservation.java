@@ -9,8 +9,9 @@ public class Reservation {
 	private Integer numberRoom;
 	private Date checkIn;
 	private Date checkOut;
-	
+
 	private static SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
 	public Reservation(Integer numberroom, Date checkIn, Date checkOut) {
 		this.numberRoom = numberroom;
 		this.checkIn = checkIn;
@@ -42,11 +43,11 @@ public class Reservation {
 		this.checkIn = checkIn;
 		this.checkOut = checkOut;
 	}
-	
-	
-	@Override 
+
+	@Override
 	public String toString() {
-		return "Room " + numberRoom  + ", check-in: "; 
+		return "Room " + numberRoom + ", check-in: " + sdf.format(checkIn) + ", check-out: " + sdf.format(checkOut)
+				+ ", " + duration() + " nights";
 	}
 
 }
